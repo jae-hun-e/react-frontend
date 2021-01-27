@@ -1,0 +1,10 @@
+{
+  "arrowParens": "always",
+  "orderedImpords": true,
+  "prinWidth": 80,
+  "singLeQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "traiLingComma": "all",
+  "useTabs": false
+}

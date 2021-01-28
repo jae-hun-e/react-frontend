@@ -1,0 +1,33 @@
+react 는 ES6 Mudule을 사용하고
+node.js 는 commonJS를 사용
+
+
+ES6 문법 : export, export default, import ... from(받아올때)
+common Js 문법 : exports, require(받아올때)
+
+
+
+-고차함수 High Order Function-
+
+함수를 인자로 받거나, 반환이 가능하고 다른 함수를 조작하는 함수
+함수/클래스 역시 모두 객체이다.
+
+function base_10(fn){
+    function wrap(x,y){
+        return fn(x,y) + 10;
+    }
+    return wrap;
+}
+
+function mysum(x,y){
+    return x + y;
+}
+
+base_10이라는 함수를 실행하면 wrap(x,y)함수가 생성되고 wrap이 반환하게 된다.
+
+mysum = base_10(mysum);
+함수 mysum을 함수 base_10의 인자로 받아서 생성한 mysum이므로 mysum은 base_10함수를 가르킨다.
+
+console.log(mysum(1, 2)); // (1+2) +10 = 13이 반환된다.
+
+이런 base_10를 고차함수라고 한다.

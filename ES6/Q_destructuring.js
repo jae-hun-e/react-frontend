@@ -8,12 +8,12 @@ console.log(name1, age1);
 //객체 비구조화
 
 // const hun2 = {
-//     name: "Hun",
-//     age: 25,
+//     name1: "Hun",
+//     age1: 25,
 //   };
-//   const { name, age2 } = hun2;
-//   console.log(name2, age2);
-// name은 위에 key값이랑 겹쳐서 오류
+// const { name1, age2 } = hun2;
+// console.log(name1, age2);
+// name1은 위에 key값(tom의 name1)이랑 겹쳐서 오류
 // age2는 맞는 키값이없어서 할당안됨
 
 const hun2 = {
@@ -34,3 +34,17 @@ const name3 = hun2_1.name1;
 const age3 = hun2_1.age1;
 console.log(name3, age3);
 // 이건 key값 같게해도 찾아서 쓸 수있음
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// 해결했다. 준수만세!
+// const는 상수값이여서 안되는겨, let으로 변수지정해주면 비구조화 가능함

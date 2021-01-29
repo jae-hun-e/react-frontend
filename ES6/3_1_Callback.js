@@ -2,6 +2,8 @@
 
 const fs = require("fs");
 // node.js에서만 가능, react에서는 require안씀
+// require()는 모듈을 불러오는 함수, script src="" 같은거임
+// require()의 export된 값만 참조가능
 
 fs.readdir(".", function (err, files) {
   //현재 디렉토리에서 순회해서 에러와 파일목록을 얻어냄
@@ -19,10 +21,10 @@ console.log("1: ENDED");
 //
 // promise 패턴
 
-const fs = require("fs");
-const fsPromises = fs.promises;
+const fs2 = require("fs");
+const fsPromises2 = fs2.promises;
 
-fsPromises
+fsPromises2
   .readdir(".") // readdir가 promise를 지원한다면
   .then((files) => {
     // 정상처리
@@ -33,19 +35,19 @@ fsPromises
 // fsPromises.readdir이 끝나기 전에 수행한다.
 console.log("2 : ENDED");
 
-// 콜백과의 차이점은 콜백에서는 err,file을 같이 받고 promise 패턴에서는 err, file이 각각 분기가 된다.
+// 콜백과의 차이점은 콜백에서는 err, file을 같이 받고 promise 패턴에서는 err, file이 각각 분기가 된다.
 // 즉, promise가 더 가독성이 좋다.
 
 //
 //
 // async/await 패턴 => EX8부터 지원
 
-const fs = require("fs");
-const fsPromises = fs.fsPromises;
+const fs3 = require("fs");
+const fsPromises3 = fs3.promises;
 
 async function fn() {
   try {
-    let files = await fsPromises.readdir("."); // 내부적으로는 promise객체를 사용
+    let files = await fsPromises3.readdir("."); // 내부적으로는 promise객체를 사용
     // promise패턴 코드가 있어야 한다.
     // then의 결과를 받아옴
     console.log(files);
@@ -54,7 +56,7 @@ async function fn() {
   }
 }
 
-fn(); //async 함수 이기에, 완료 전에 다음 로직이 동장
+fn(); // async 함수 이기에, 완료 전에 다음 로직이 등장
 
 // async함수가 완료되기 전에 수행한다.
 console.log("3: ENDED");

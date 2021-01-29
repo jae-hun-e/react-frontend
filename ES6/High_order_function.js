@@ -1,3 +1,5 @@
+// 고차함수는 결국 함수를 함수로 감싸고 반환하는 것이다.
+
 function base_10(fn) {
   const i = 10;
   return i;
@@ -28,3 +30,6 @@ const mysum = (a, b) => a + b;
 
 const result_fn = base_11(mysum);
 console.log(result_fn(1, 2)); // wrap = 13
+
+// mysum = base_10(mysum); 처럼 반환값이 같다는 것은
+// base_10 으로 mysum이라는 함수를 wrap한 것이다.
